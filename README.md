@@ -102,6 +102,8 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
         'footprints': footprints,       # Mandatory
         'bleprints': bleprints
 
+	*client_code* is optional feature. Define any value for your internal usage.
+
 	[footprints]
     multipl WiFi scans (at least two successive scans)
 

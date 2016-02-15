@@ -1,5 +1,5 @@
 # loplat-rest-api
-loplat's indoor positioning platform REST API - register a place, recognize a place
+loplat's indoor positioning platform REST API - register a place, recognize a place.
 
 
 ## REST API List
@@ -8,10 +8,7 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
 
 
 
-## Detailed Information
-
-
-#### 1. Recognize a place
+### 1. Recognize a place
 
 * First, scan nearby WiFi APs in Android or IoT Devices.
 * Second, deliver the scan result to loplat server.
@@ -22,10 +19,10 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
 * Request URL: https://loplatapi.appspot.com/searchplace
 * Body format (JSON):
 
-        'client_id': 'test'
-        'client_secret': 'test'
-        'type': 'searchplace'
-        'scan': [
+        'type': 'searchplace'        # Mandatory
+        'client_id': 'test'          # Mandatory
+        'client_secret': 'test'      # Mandatory
+        'scan': [                    # Mandatory
             {
                 'bssid': 'aa:bb:cc:dd:ee:ff',
                 'ssid': "wifi ap's name",
@@ -41,8 +38,7 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
             ...
         ]
 
-
-[주의] ssid에 " 혹은 ' 가 들어가는 경우 데이터 형태가 깨지지 않도록 주의.
+	[주의] ssid에 " 혹은 ' 가 들어가는 경우 데이터 형태가 깨지지 않도록 주의.
 
 
 #####response
@@ -77,9 +73,132 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
         'type': 'searchplace',
         'reason': 'Location Acquisition Fail'
 
-*sample python code: searchplace-sample.py*
+	**sample code (python): searchplace-sample.py**
 
 
-#### 2. Register a place
+### 2. Register a place
 
+* First, scan nearby WiFi APs in Android or IoT Devices.
+* Second, register a place with the scan result to loplat server.
+
+
+#####request
+* Use HTTP POST Method to Register a Place
+* Request URL: https://loplatapi.appspot.com/placecollector
+* Body format (JSON):
+
+        'type': 'registerplace'         # Mandatory
+        'client_id': 'test'             # Mandatory
+        'client_secret': 'test'         # Mandatory
+        'placeinfo': {
+        	'placename': 'starbucks',   # Mandatory
+            'subname': 'timesquare',
+            'category': 'Cafe',         # Mandatory
+            'floor': 1,                 # Mandatory
+            'lat': 37.5123,             # Mandatory
+            'lng': 126.9397,            # Mandatory
+            'client_code': '123'
+        }
+        'footprints': footprints,       # Mandatory
+        'bleprints': bleprints
+
+	[footprints]
+    multipl WiFi scans (at least two successive scans)
+        [
+            # first scan
+            [
+                # wifi ap 1
+                {
+                    'bssid': 'aa:bb:cc:dd:ee:ff',
+                    'ssid': "wifi ap's name",
+                    'rss': -77,
+                    'frequency': 2420
+                },
+                # wifi ap 2
+                {
+                    'bssid': 'aa:bb:cc:dd:ee:dd',
+                    'ssid': "wifi ap's name2",
+                    'rss': -87,
+                    'frequency': 2437
+                },
+                ...
+            ],
+            # second scan
+            [
+                {
+                    'bssid': 'aa:bb:cc:dd:ee:ff',
+                    'ssid': "wifi ap's name",
+                    'rss': -68,
+                    'frequency': 2420
+                },
+                ...
+            ],
+        ]
+
+	[bleprints]
+    multiple BLE(iBeacon) scans (at least two successive scans).
+    each scan collects BLE signals during one second.
+
+        [
+            # first scan
+            [
+                # iBeacon 1
+                {
+                    'mac': '0x1234',
+                    'devicename': 'EST',
+                    'rss': -77,               # averaged strength
+                    'scantime': timestamp,    # in milliseconds
+                    'devicetype': 1,          # 0: BLE, 1: iBeacon
+                    'uuid': 'xxxx-yyyy',      # iBeacon UUID
+                    'major': 897,             # iBeacon Major
+                    'minor': 300              # iBeacon Minor
+                },
+                # iBeacon 2
+                {
+                    'mac': '0x1234',
+                    'devicename': 'EST',
+                    'rss': -77,               # averaged strength
+                    'scantime': timestamp,    # in milliseconds
+                    'devicetype': 1,          # 0: BLE, 1: iBeacon
+                    'uuid': 'xxxx-yyyy',      # iBeacon UUID
+                    'major': 897,             # iBeacon Major
+                    'minor': 300              # iBeacon Minor
+                },
+                ...
+            ],
+            # second scan
+            [
+                # iBeacon 1
+                {
+                    'mac': '0x1234',
+                    'devicename': 'EST',
+                    'rss': -77,               # averaged strength
+                    'scantime': timestamp,    # in milliseconds
+                    'devicetype': 1,          # 0: BLE, 1: iBeacon
+                    'uuid': 'xxxx-yyyy',      # iBeacon UUID
+                    'major': 897,             # iBeacon Major
+                    'minor': 300              # iBeacon Minor
+                },
+                ...
+            ]
+        ]
+
+#####response
+
+* 위치획득 성공시 결과 값
+
+        'status': 'success',
+        'type': 'registerplace',
+        'placeid': placeid
+
+
+* client 인증 실패시 오류 값
+        'status': 'fail',
+        'type': 'registerplace',
+        'reason': 'Not Allowed Client'
+
+
+
+**sample code (python): placecollector-sample.py**
+In sample code, more functions are described.
 

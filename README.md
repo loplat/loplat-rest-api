@@ -145,25 +145,25 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
             [
                 # iBeacon 1
                 {
-                    'mac': '0x1234',
+                    'mac': 'C3:71:D2:63:2B:A1',
                     'devicename': 'EST',
                     'rss': -77,               # averaged strength
                     'scantime': timestamp,    # in milliseconds
                     'devicetype': 1,          # 0: BLE, 1: iBeacon
-                    'uuid': 'xxxx-yyyy',      # iBeacon UUID
+                    'uuid': 'xxxx-1234',      # iBeacon UUID
                     'major': 897,             # iBeacon Major
                     'minor': 300              # iBeacon Minor
                 },
                 # iBeacon 2
                 {
-                    'mac': '0x1234',
-                    'devicename': 'EST',
-                    'rss': -77,               # averaged strength
+                    'mac': '03:71:D2:63:2B:A1',
+                    'devicename': 'LOPLAT',
+                    'rss': -88,               # averaged strength
                     'scantime': timestamp,    # in milliseconds
                     'devicetype': 1,          # 0: BLE, 1: iBeacon
                     'uuid': 'xxxx-yyyy',      # iBeacon UUID
-                    'major': 897,             # iBeacon Major
-                    'minor': 300              # iBeacon Minor
+                    'major': 33,              # iBeacon Major
+                    'minor': 271              # iBeacon Minor
                 },
                 ...
             ],
@@ -171,12 +171,12 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
             [
                 # iBeacon 1
                 {
-                    'mac': '0x1234',
+                    'mac': 'C3:71:D2:63:2B:A1,
                     'devicename': 'EST',
-                    'rss': -77,               # averaged strength
+                    'rss': -73,               # averaged strength
                     'scantime': timestamp,    # in milliseconds
                     'devicetype': 1,          # 0: BLE, 1: iBeacon
-                    'uuid': 'xxxx-yyyy',      # iBeacon UUID
+                    'uuid': 'xxxx-1234',      # iBeacon UUID
                     'major': 897,             # iBeacon Major
                     'minor': 300              # iBeacon Minor
                 },

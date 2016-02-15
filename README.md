@@ -17,7 +17,7 @@ First, scan nearby WiFi APs in Android or IoT Devices.
 Second, deliver the scan result to loplat server.
 Then, loplat server return a recognized place information.
 
-**++request++**
+#####request
 Use HTTP POST Method to Recognize a Place
 Request URL: https://loplatapi.appspot.com/searchplace
 Body format (JSON):
@@ -45,7 +45,7 @@ Body format (JSON):
 [주의] ssid에 " 혹은 ' 가 들어가는 경우 데이터 형태가 깨지지 않도록 주의.
 
 
-**++response++**
+#####response
 
 * 위치획득 성공시 결과 값
 

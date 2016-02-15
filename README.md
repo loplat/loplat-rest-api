@@ -104,7 +104,8 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
 
 	[footprints]
     multipl WiFi scans (at least two successive scans)
-        [
+
+		[
             # first scan
             [
                 # wifi ap 1
@@ -193,7 +194,8 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
 
 
 * client 인증 실패시 오류 값
-        'status': 'fail',
+
+		'status': 'fail',
         'type': 'registerplace',
         'reason': 'Not Allowed Client'
 

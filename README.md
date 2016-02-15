@@ -13,33 +13,33 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
 
 #### 1. Recognize a place
 
-First, scan nearby WiFi APs in Android or IoT Devices.
-Second, deliver the scan result to loplat server.
-Then, loplat server return a recognized place information.
+* First, scan nearby WiFi APs in Android or IoT Devices.
+* Second, deliver the scan result to loplat server.
+* Then, loplat server return a recognized place information.
 
 #####request
-Use HTTP POST Method to Recognize a Place
-Request URL: https://loplatapi.appspot.com/searchplace
-Body format (JSON):
+* Use HTTP POST Method to Recognize a Place
+* Request URL: https://loplatapi.appspot.com/searchplace
+* Body format (JSON):
 
-    'client_id': 'test'
-    'client_secret': 'test'
-    'type': 'searchplace'
-    'scan': [
-        {
-            'bssid': 'aa:bb:cc:dd:ee:ff',
-            'ssid': "wifi ap's name",
-            'rss': -77,
-            'frequency': 2420
-		},
-        {
-        	'bssid': 'aa:bb:cc:dd:ee:dd',
-            'ssid': "wifi ap's name2",
-            'rss': -87,
-            'frequency': 2437
-		},
-        ...
-    ]
+        'client_id': 'test'
+        'client_secret': 'test'
+        'type': 'searchplace'
+        'scan': [
+            {
+                'bssid': 'aa:bb:cc:dd:ee:ff',
+                'ssid': "wifi ap's name",
+                'rss': -77,
+                'frequency': 2420
+            },
+            {
+                'bssid': 'aa:bb:cc:dd:ee:dd',
+                'ssid': "wifi ap's name2",
+                'rss': -87,
+                'frequency': 2437
+            },
+            ...
+        ]
 
 
 [주의] ssid에 " 혹은 ' 가 들어가는 경우 데이터 형태가 깨지지 않도록 주의.
@@ -63,8 +63,8 @@ Body format (JSON):
             'threshold': 0.68
         }
 
-	accuracy > threshold 인 경우 해당 장소 반경 10m 이내임
-	accuracy 가 0.2 보다 작은경우 통상 30~40m 이상 떨어짐
+	* accuracy > threshold 인 경우 해당 장소 반경 10m 이내임
+	* accuracy 가 0.2 보다 작은경우 통상 30~40m 이상 떨어짐
 
 * client 인증 실패시 오류 값
         'status': 'fail',

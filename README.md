@@ -105,6 +105,9 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
 
 	*client_code* is optional feature. Define any value for your internal usage.
 
+	Allowable *category* list:
+    'Cafe', 'Company', 'Home', 'Restaurant', 'School', 'Theater', 'Shop', 'Etc'
+
 	[footprints]
     multipl WiFi scans (at least two successive scans)
 

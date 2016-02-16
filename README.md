@@ -55,8 +55,9 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
             'lng': 126.8872709,   # 인식된 장소의 경도
             'lat_est': 37.465,    # 예측된 위치의 위도
             'lng_est': 126.8872,  # 예측된 위치의 경도
-            'accuracy': 0.8806    # 인식된 장소에 있을 확률값.
+            'accuracy': 0.8806    # 인식된 장소에 있을 확률값
             'threshold': 0.68
+            'client_code': 'xxx'  # 장소관리를위해 필요한 임의의 값을 정의해서 사용
         }
 
 	* accuracy > threshold 인 경우 해당 장소 반경 10m 이내임
@@ -92,7 +93,7 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
         'client_secret': 'test'         # Mandatory
         'placeinfo': {
         	'placename': 'starbucks',   # Mandatory
-            'subname': 'timesquare',
+            'tags': 'timesquare, NY',
             'category': 'Cafe',         # Mandatory
             'floor': 1,                 # Mandatory
             'lat': 37.5123,             # Mandatory

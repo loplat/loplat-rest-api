@@ -19,9 +19,10 @@ def getloplatplaces():
     client_id = 'test'
     client_secret = 'test'
     data = {
-        'type': 'getplacelist',
         'client_id': client_id,
-        'client_secret': client_secret
+        'client_secret': client_secret,
+
+        'type': 'getplacelist'
     }
 
     try:
@@ -77,7 +78,7 @@ def registerplace():
     lng = 126.9397389
     placeinfo = {
         'placename': 'starbucks',
-        'subname': 'timesquare, manhattan',
+        'tags': 'timesquare, manhattan',
         'category': 'Cafe',
         'floor': 1,
         'lat': lat,
@@ -86,7 +87,7 @@ def registerplace():
     }
 
 
-    # request
+    #
     client_id = 'test'
     client_secret = 'test'
     data = {
@@ -151,7 +152,7 @@ def modifyplaceinfo(placeid):
         'placeid': placeid,
         'placename': 'McDonald',
         'category': 'Restaurant',
-        'subname': '42nd',
+        'tags': '42nd',
         'floor': 99,
         'lat': 37.5,
         'lng': 126.9,
@@ -185,8 +186,8 @@ def modifyplaceinfo(placeid):
 
 
 # registerplace()
-# deleteplace(8031)
-# modifyplaceinfo(8031)
+# deleteplace(8033)
+# modifyplaceinfo(8033)
 getloplatplaces()
 
 

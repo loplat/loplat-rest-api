@@ -17,7 +17,7 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
 #####request
 * Use HTTP POST Method to Recognize a Place
 * Request URL: https://loplatapi.appspot.com/searchplace
-* Body format (JSON):
+* Body format (JSON): 'scan' 혹은 'blescan' 둘 중 하나만 사용
 
         'type': 'searchplace'        # Mandatory
         'client_id': 'test'          # Mandatory
@@ -37,8 +37,24 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
             },
             ...
         ]
+        'blescan': [
+        	{
+            	'uuid': 'aaaa-bbbb-cccc-dddd',
+                'major': 1,
+                'minor': 99,
+                'rss': -67
+            },
+            {
+            	'uuid': 'eeee-ffff-kkkk-gggg',
+                'major': 33,
+                'minor': 2734,
+                'rss': -88
+            },
+            ...
+        ]
 
 	[주의] ssid에 " 혹은 ' 가 들어가는 경우 데이터 형태가 깨지지 않도록 주의.
+
 
 
 #####response

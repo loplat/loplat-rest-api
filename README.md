@@ -1,7 +1,7 @@
 # loplat-rest-api
 loplat's indoor positioning platform REST API - register a place, recognize a place.
 
-#### Note
+#### Note ####
 * If you want to see Plengi SDK, please refer to https://github.com/loplat/loplat-android-sample for details
 
 ## REST API List

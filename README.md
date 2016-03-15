@@ -54,7 +54,10 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
         ]
 
 	[주의] ssid에 " 혹은 ' 가 들어가는 경우 데이터 형태가 깨지지 않도록 주의.
-
+	
+       * 참고 사항
+	  - 예제에 기입 된 client_id와 client_secret은 테스트 용임
+	  - 정식 id와 secret을 원하시는 분은 아래에 기입 된 Request Key항목 참고 바람
 
 
 #####response
@@ -226,3 +229,9 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
 **sample code (python): placecollector-sample.py**
 In sample code, more functions are described.
 
+## Request Key
+* If you want to use loplat REST API, Please contact us using the guidlines below
+  1. Your Name
+  2. Your Company
+  3. Purpose of your request
+* email address: Lamen2357@loplat.com

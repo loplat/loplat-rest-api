@@ -3,7 +3,7 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
 
 ## REST API example
 * Plengi SDK
-  - refer to https://github.com/loplat/loplat-android-sample for detail
+  - refer to https://github.com/loplat/loplat-android-sample for details
 
 ## REST API List
 1. Recognize a place (with WiFi Scan)

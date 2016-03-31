@@ -79,6 +79,7 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
             'accuracy': 0.8806    # 인식된 장소에 있을 확률값
             'threshold': 0.68
             'client_code': 'xxx'  # 장소관리를위해 필요한 임의의 값을 정의해서 사용
+            'place_type': 'mobile' or 'static'
         }
 
 	* accuracy > threshold 인 경우 해당 장소 반경 10m 이내임

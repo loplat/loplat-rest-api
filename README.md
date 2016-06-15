@@ -121,6 +121,7 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
             'floor': 1,                 # Mandatory
             'lat': 37.5123,             # Mandatory
             'lng': 126.9397,            # Mandatory
+	    'scantime': timestamp	# Mandatory, in milliseconds
             'client_code': '123'
         }
         'footprints': footprints,       # Mandatory

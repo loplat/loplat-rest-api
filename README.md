@@ -121,7 +121,6 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
             'floor': 1,                 # Mandatory
             'lat': 37.5123,             # Mandatory
             'lng': 126.9397,            # Mandatory
-            'scantime': timestamp       # Mandatory, in milliseconds
             'client_code': '123'
         }
         'footprints': footprints,       # Mandatory
@@ -144,6 +143,7 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
                     'ssid': "wifi ap's name",
                     'rss': -77,
                     'frequency': 2420
+                    'scantime': timestamp       # in milliseconds
                 },
                 # wifi ap 2
                 {
@@ -151,6 +151,7 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
                     'ssid': "wifi ap's name2",
                     'rss': -87,
                     'frequency': 2437
+                    'scantime': timestamp       # in milliseconds
                 },
                 ...
             ],
@@ -161,6 +162,7 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
                     'ssid': "wifi ap's name",
                     'rss': -68,
                     'frequency': 2420
+                    'scantime': timestamp       # in milliseconds
                 },
                 ...
             ],

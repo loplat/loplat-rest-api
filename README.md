@@ -1,13 +1,14 @@
-﻿#### Note ####
+#### Note ####
 * If you want to see Plengi Android SDK, please refer to https://github.com/loplat/loplat-sdk-android for details
 * If you want to see Plengi iOS SDK, please refer to https://github.com/loplat/loplat-sdk-ios for details
 
 # loplat-rest-api
-loplat's indoor positioning platform REST API - register a place, recognize a place.
+loplat's indoor positioning platform REST API - register a place, recognize a place, and get a place list.
 
 ## REST API List
 1. Recognize a place (with WiFi Scan)
 2. Register/Delete/Modify a place
+3. Get a place list
 
 
 ### 1. Recognize a place
@@ -231,10 +232,54 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
         'type': 'registerplace',
         'reason': 'Not Allowed Client'
 
-
-
 **sample code (python): placecollector-sample.py**
 In sample code, more functions are described.
+
+
+### 3. Get a place list
+
+#####request
+* Use HTTP POST Method to Register a Place
+* Request URL: https://loplatapi.appspot.com/placehandler
+* Body format (JSON):
+
+        'type': 'getplacelist'         # Mandatory
+        'client_id': 'test'             # Mandatory
+        'client_secret': 'test'         # Mandatory  
+
+#####response
+* client 인증 성공시 결과 값
+
+        'status': 'success',
+        'type': 'getplacelist',
+        'place': [
+	        #first place
+			{
+				'placeid': 1234
+	            'placename': '로플랫',  # 장소 이름
+	            'tags': '#D.camp',    # tag
+	            'floor': 5,           # 층수
+	            'category': 'Office'  # 장소 카테고리
+	            'lat': 37.46621630,   # 장소의 위도
+	            'lng': 126.8872709,   # 장소의 경도
+	            'client_code': null  # 장소관리를 위해 필요한 임의의 값
+	        }
+	        #second place
+			{
+				'placeid' = 40552
+	            'placename': 'starbucks',  # 장소 이름
+	            'tags': '#heaven',    # tag
+	            'floor': 1,           # 층수
+	            'category': 'Cafe'    # 장소 카테고리
+	            'lat': 37.46621630,   # 장소의 위도
+	            'lng': 126.8872709,   # 장소의 경도
+	            'client_code': '123' # 장소관리를 위해 필요한 임의의 값
+	        }
+	        ......
+        ]
+
+
+**sample code (python): placehandler-sample.py**
 
 ## Request Key
 * If you want to use loplat REST API, please contact US using the guidlines below

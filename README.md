@@ -239,7 +239,7 @@ In sample code, more functions are described.
 ### 3. Get a place list
 
 #####request
-* Use HTTP POST Method to Register a Place
+* Use HTTP POST Method to get a place list
 * Request URL: https://loplatapi.appspot.com/placehandler
 * Body format (JSON):
 

@@ -204,7 +204,7 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
             [
                 # iBeacon 1
                 {
-                    "mac": "C3:71:D2:63:2B:A1,
+                    "mac": "C3:71:D2:63:2B:A1",
                     "devicename": "EST",
                     "rss": -73,               # averaged strength
                     "scantime": timestamp,    # in milliseconds

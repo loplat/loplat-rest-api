@@ -254,8 +254,8 @@ In sample code, more functions are described.
         "type": "getplacelist",
         "place": [
 	        #first place
-		{
-		    "placeid": 1234
+		   {
+		    	"placeid": 1234
 	            "placename": "로플랫",  # 장소 이름
 	            "tags": "#D.camp",    # tag
 	            "floor": 5,           # 층수
@@ -265,8 +265,8 @@ In sample code, more functions are described.
 	            "client_code": null  # 장소관리를 위해 필요한 임의의 값
 	        }
 	        #second place
-		{
-   		    "placeid" = 40552
+		   {
+   		    	"placeid" = 40552
 	            "placename": "starbucks",  # 장소 이름
 	            "tags": "#heaven",    # tag
 	            "floor": 1,           # 층수

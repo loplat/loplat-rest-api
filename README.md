@@ -71,6 +71,7 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
         "status": "success",
         "type": "searchplace",
         "place": {
+	    "placeid": 1234	  # place id
             "name": "starbucks",  # 학습시 입력한 장소 이름
             "tags": "#heaven",    # tag 항목에 입력한 내용
             "floor": 1,           # 층수, 지하는 -2 와 같이 표시
@@ -112,9 +113,9 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
 * Request URL: https://loplatapi.appspot.com/placecollector
 * Body format (JSON):
 
-        "type": "registerplace"         # Mandatory
-        "client_id": "test"             # Mandatory
-        "client_secret": "test"         # Mandatory
+        "type": "registerplace",         # Mandatory
+        "client_id": "test",             # Mandatory
+        "client_secret": "test",         # Mandatory
         "placeinfo": {
         	"placename": "starbucks",   # Mandatory
             "tags": "timesquare, NY",
@@ -123,7 +124,7 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
             "lat": 37.5123,             # Mandatory
             "lng": 126.9397,            # Mandatory
             "client_code": "123"
-        }
+        },
         "footprints": footprints,       # Mandatory
         "bleprints": bleprints
 
@@ -143,7 +144,7 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
                     "bssid": "aa:bb:cc:dd:ee:ff",
                     "ssid": "wifi ap's name",
                     "rss": -77,
-                    "frequency": 2420
+                    "frequency": 2420,
                     "scantime": timestamp       # in milliseconds
                 },
                 # wifi ap 2
@@ -151,7 +152,7 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
                     "bssid": "aa:bb:cc:dd:ee:dd",
                     "ssid": "wifi ap's name2",
                     "rss": -87,
-                    "frequency": 2437
+                    "frequency": 2437,
                     "scantime": timestamp       # in milliseconds
                 },
                 ...
@@ -162,7 +163,7 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
                     "bssid": "aa:bb:cc:dd:ee:ff",
                     "ssid": "wifi ap's name",
                     "rss": -68,
-                    "frequency": 2420
+                    "frequency": 2420,
                     "scantime": timestamp       # in milliseconds
                 },
                 ...

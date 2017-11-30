@@ -71,7 +71,7 @@ loplat's indoor positioning platform REST API - register a place, recognize a pl
         "status": "success",
         "type": "searchplace",
         "place": {
-	    "placeid": 1234	  # place id
+	        "placeid": 1234	  # place id
             "name": "starbucks",  # 학습시 입력한 장소 이름
             "tags": "#heaven",    # tag 항목에 입력한 내용
             "floor": 1,           # 층수, 지하는 -2 와 같이 표시

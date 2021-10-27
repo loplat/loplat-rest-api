@@ -1,4 +1,6 @@
 #### Note ####
+* THIS API IS DEPRECATED
+
 * If you want to see Plengi Android SDK, please refer to https://github.com/loplat/loplat-sdk-android for details
 * If you want to see Plengi iOS SDK, please refer to https://github.com/loplat/loplat-sdk-ios for details
 
